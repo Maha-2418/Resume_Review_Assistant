@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Analysis Report</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div class="title">
+            📄 Resume Review Assistant
+        </div>
+
+        <div class="subtitle">
+            AI Powered Resume Analysis Report
+        </div>
+
+        <hr>
+
+        <p>
+            <b>Candidate :</b> {{ candidate_name }}
+        </p>
+
+        <p>
+            <b>Date :</b> {{ date }}
+        </p>
+
+    </div>
+
+
+    <!-- ATS Score -->
+
+    <div class="score-card">
+
+        <h2>ATS SCORE</h2>
+
+        <div class="score">
+
+            {{ ats_score }}/100
+
+        </div>
+
+        <p>
+            {{ verdict }}
+        </p>
+
+    </div>
+
+
+    <!-- Executive Summary -->
+
+    <div class="section">
+
+        <h2>📌 Executive Summary</h2>
+
+        <p>
+
+            {{ summary }}
+
+        </p>
+
+    </div>
+
+
+    <!-- Score Breakdown -->
+
+    <div class="section">
+
+        <h2>📊 ATS Score Breakdown</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Category</th>
+
+                <th>Score</th>
+
+            </tr>
+
+            <tr>
+
+                <td>ATS Compatibility</td>
+
+                <td>{{ ats_score }}</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Technical Skills</td>
+
+                <td>{{ technical_score }}</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Grammar</td>
+
+                <td>{{ grammar_score }}</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Formatting</td>
+
+                <td>{{ formatting_score }}</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Projects</td>
+
+                <td>{{ project_score }}</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- Strengths -->
+
+    <div class="section">
+
+        <h2>💪 Strengths</h2>
+
+        <ul>
+
+            {% for item in strengths %}
+
+            <li>{{ item }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+
+    <!-- Weaknesses -->
+
+    <div class="section">
+
+        <h2>⚠ Weaknesses</h2>
+
+        <ul>
+
+            {% for item in weaknesses %}
+
+            <li>{{ item }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+
+    <!-- Missing Skills -->
+
+    <div class="section">
+
+        <h2>❌ Missing Skills</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Skill</th>
+
+                <th>Priority</th>
+
+            </tr>
+
+            {% for skill in missing_skills %}
+
+            <tr>
+
+                <td>{{ skill }}</td>
+
+                <td>High</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+
+    <!-- Grammar -->
+
+    <div class="section">
+
+        <h2>📝 Grammar Issues</h2>
+
+        <ul>
+
+            {% for item in grammar %}
+
+            <li>{{ item }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+
+    <!-- Suitable Roles -->
+
+    <div class="section">
+
+        <h2>💼 Suitable Job Roles</h2>
+
+        <ul>
+
+            {% for role in job_roles %}
+
+            <li>{{ role }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+
+    <!-- Suggestions -->
+
+    <div class="section">
+
+        <h2>📈 Improvement Suggestions</h2>
+
+        <ul>
+
+            {% for item in suggestions %}
+
+            <li>{{ item }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+
+    <!-- Recruiter Verdict -->
+
+    <div class="section">
+
+        <h2>⭐ Recruiter's Verdict</h2>
+
+        <p>
+
+            {{ recruiter_verdict }}
+
+        </p>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <div class="footer">
+
+        <hr>
+
+        <p>
+
+            Generated using Resume Review Assistant
+
+        </p>
+
+    </div>
+
+</body>
+
+</html>
