@@ -7,7 +7,7 @@ load_dotenv()
 QWEN_API_KEY = os.getenv("QWEN_API_KEY")
 
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
-MODEL = "google/gemma-4-26b-a4b-it:free"
+MODEL = "nvidia/nemotron-3-ultra-550b-a55b:free"
 
 def call_qwen(prompt):
 
